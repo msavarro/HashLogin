@@ -25,7 +25,7 @@ public class Hash {
      */
     public String toHash(String password, String salt) {
         try {
-            password.concat(salt);
+            password = password.concat(salt);
             MessageDigest md = MessageDigest.getInstance("SHA-512");
             md.update(password.getBytes());
             byte byteData[] = md.digest();
